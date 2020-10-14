@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="STAY.css">
+
+
+</head>
+<body>
+	<div class="scrollmenu">
+<a href="ForsideSTAY.html">Forside</a>
+  <a href="Innovationwebsite.html">Registrering</a>
+</div>
+
+	<h1>STAY</h1>
+
+	<select id="skolemeny">
+		<option>Velg skole</option>
+	</select>
+
+	<select id="trinnmeny"></select>
+
+	<select id="klassemeny"></select>
+
+	<p id="utskrift">
+		
+	</p>
+
+	
+<div id="elever">
+	<div id="elev1"><img src="pfp.jpg"><p>Ida</p>
+	<div id="grunner">
+  <input type="checkbox" id="grunn1" name="grunn1"  value="text">
+  <label for="grunn1"> Eleven er syk</label><br>
+  <input type="checkbox" id="grunn2" name="grunn2"  value="text">
+  <label for="grunn2"> Legetime/Tannlegebesøk</label><br>
+  <input type="checkbox" id="grunn3" name="grunn3"  value="text">
+  <label for="grunn3"> Ferie permisjon</label><br><br>
+   <input type="felt" name="Andre årsaker" placeholder="Skriv inn annen årsak"><br><br>
+  
+
+</div>
+</div>
+
+		<div id="elev2"><img src="pfp.jpg"><p>Tom</p>
+		<div id="grunner2">
+  <input type="checkbox" id="grunn1" name="grunn1"  value="text">
+  <label for="grunn1"> Eleven er syk</label><br>
+  <input type="checkbox" id="grunn2" name="grunn2"  value="text">
+  <label for="grunn2"> Legetime/Tannlegebesøk</label><br>
+  <input type="checkbox" id="grunn3" name="grunn3"  value="text">
+  <label for="grunn3"> Ferie permisjon</label><br><br>
+   <input type="felt" name="Andre årsaker" placeholder="Skriv inn annen årsak"><br><br>
+  
+</div>
+</div>
+		<div id="elev3"><img src="pfp.jpg"><p>Aisha</p>
+		<div id="grunner3">
+  <input type="checkbox" id="grunn1" name="grunn1"  value="text">
+  <label for="grunn1"> Eleven er syk</label><br>
+  <input type="checkbox" id="grunn2" name="grunn2"  value="text">
+  <label for="grunn2"> Legetime/Tannlegebesøk</label><br>
+  <input type="checkbox" id="grunn3" name="grunn3"  value="text">
+  <label for="grunn3"> Ferie permisjon</label><br><br>
+   <input type="felt" name="Andre årsaker" placeholder="Skriv inn annen årsak"><br><br>
+  
+</div>
+</div>
+		<div id="elev4"><img src="pfp.jpg"><p>Yousef</p>
+		<div id="grunner4">
+   <input type="checkbox" id="grunn1" name="grunn1"  value="text">
+  <label for="grunn1"> Eleven er syk</label><br>
+  <input type="checkbox" id="grunn2" name="grunn2"  value="text">
+  <label for="grunn2"> Legetime/Tannlegebesøk</label><br>
+  <input type="checkbox" id="grunn3" name="grunn3"  value="text">
+  <label for="grunn3"> Ferie permisjon</label><br><br>
+   <input type="felt" name="Andre årsaker" placeholder="Skriv inn annen årsak"><br><br>
+  
+</div>
+</div>
+		</div>
+
+
+
+<button id="bekreft">Bekreft</button>
+
+	<script type="text/javascript">
+		
+		var skolemeny = document.getElementById('skolemeny');
+		var trinnmeny = document.getElementById('trinnmeny');
+		var klassemeny = document.getElementById('klassemeny');
+		var utskrift = document.getElementById('utskrift');
+		trinnmeny.style.visibility = 'hidden';
+		klassemeny.style.visibility = 'hidden';
+		elever.style.visibility = 'hidden';
+		grunner.style.visibility = 'hidden';
+		grunner2.style.visibility = 'hidden';
+		grunner3.style.visibility = 'hidden';
+		grunner4.style.visibility = 'hidden';
+		bekreft.style.visibility = 'hidden';
+		
+
+		var skole1 = {
+			navn: 'Lofsrud ungdomsskole',
+			trinn: ['8trinn', '9trinn', '10trinn'],
+			klasse: ['A', 'B', 'C']
+			
+		}
+
+		var skole2 = {
+			navn: 'Vestfossen ungdomsskole',
+			trinn: ['8trinn', '9trinn', '10trinn'],
+			klasse: ['A', 'B', 'C']
+		}
+
+		var skole3 = {
+			navn: 'Grunerløkka ungdomsskole',
+			trinn: ['8trinn', '9trinn', '10trinn'],
+			klasse: ['A', 'B', 'C']
+		}
+
+		var skoleliste = [skole1, skole2, skole3];
+
+		for (var i = 0; i < skoleliste.length; i++) {
+			skolemeny.innerHTML += '<option>' + skoleliste[i].navn + '</option>'
+
+		}
+
+		var valgtSkole;
+
+		skolemeny.onchange = function() {
+			valgtSkole = skolemeny.selectedIndex-1;
+			trinnmeny.style.visibility = 'visible';
+			trinnmeny.innerHTML = '<option>Velg et trinn</option>';
+			for(var i = 0; i < skoleliste[valgtSkole].trinn.length; i++) {
+				trinnmeny.innerHTML += '<option>' + skoleliste[valgtSkole].trinn[i] + '</option>';
+			}  
+		}
+
+		var valgtTrinn;
+
+		trinnmeny.onchange = function() {
+			valgtTrinn = trinnmeny.selectedIndex-1;
+			klassemeny.style.visibility = 'visible';
+			klassemeny.innerHTML = '<option>Velg en klasse</option>';
+			for(var i = 0; i < skoleliste[valgtTrinn].klasse.length; i++) {
+				klassemeny.innerHTML += '<option>' + skoleliste[valgtTrinn].klasse[i] + '</option>';
+			}  
+		}
+
+
+		klassemeny.onchange = function() {
+			var valgtKlasse = klassemeny.selectedIndex-1;
+			elever.style.visibility = 'visible';
+			bekreft.style.visibility = 'visible';
+			utskrift.innerHTML += 'Du har valgt klasse ' + skoleliste[valgtSkole].navn + ' '+ skoleliste[valgtSkole].trinn[valgtTrinn] + ' '+ skoleliste[valgtSkole].klasse[valgtKlasse] + ' klassen';
+			
+			
+		}
+
+
+		elev1.onclick = function(){
+			grunner.style.visibility = 'visible';
+		}
+
+		elev2.onclick = function(){
+			grunner2.style.visibility = 'visible';
+		}
+
+		elev3.onclick = function(){
+			grunner3.style.visibility = 'visible';
+		}
+
+		elev4.onclick = function(){
+			grunner4.style.visibility = 'visible';
+		}
+
+
+		bekreft.onclick = function(){
+			trinnmeny.style.visibility = 'hidden';
+		klassemeny.style.visibility = 'hidden';
+		elever.style.visibility = 'hidden';
+		grunner.style.visibility = 'hidden';
+		grunner2.style.visibility = 'hidden';
+		grunner3.style.visibility = 'hidden';
+		grunner4.style.visibility = 'hidden';
+
+		utskrift.innerHTML = " ";
+
+		skolemeny.selectedIndex = 0;
+
+		bekreft.style.visibility = 'hidden';
+
+		
+			
+		}
+
+		
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
