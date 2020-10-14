@@ -15,7 +15,7 @@
   <a href="Innovationwebsite.html">Registrering</a>
 </div>
 
-	<h1 id="regtittel">STAY</h1>
+	<h1 class="logo">STAY</h1>
 
 	<select id="skolemeny">
 		<option>Velg skole</option>
@@ -156,7 +156,7 @@
 			var valgtKlasse = klassemeny.selectedIndex-1;
 			elever.style.visibility = 'visible';
 			bekreft.style.visibility = 'visible';
-			utskrift.innerHTML += 'Du har valgt klasse ' + skoleliste[valgtSkole].navn + ' '+ skoleliste[valgtSkole].trinn[valgtTrinn] + ' '+ skoleliste[valgtSkole].klasse[valgtKlasse] + ' klassen';
+			utskrift.innerHTML += 'Du har valgt klasse ' + skoleliste[valgtSkole].navn + ' '+ skoleliste[valgtSkole].trinn[valgtTrinn] + ' '+ skoleliste[valgtSkole].klasse[valgtKlasse] + ' klassen' + '<br><br>' + 'Klikk på bildet for å føre fravær';
 			
 			
 		}
