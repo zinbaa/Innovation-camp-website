@@ -13,6 +13,8 @@
 .forside {
     margin-top: 100px;
     text-align: center;
+    font-family: monospace;
+
     
 }
 
@@ -22,6 +24,7 @@
   border: solid 2px;
   margin-left: 36%;
   margin-right: 25%;
+  font-family: monospace;
 }
 
 #tekst {
