@@ -19,16 +19,20 @@
 }
 
 #info {
-  width: 400px;
-  height: 300px;
+  width: 600px;
+  height: 320px;
   border: solid 2px;
-  margin-left: 36%;
-  margin-right: 25%;
-  font-family: monospace;
+  margin-left: 30%;
+  margin-right: 20%;
+  
+
 }
 
 #tekst {
-  font-size: 20px;
+  font-size: 17px;
+  font-family: monospace;
+  padding: 10px;
+
 }
 
 
